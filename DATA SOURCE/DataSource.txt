@@ -1,0 +1,16 @@
+    /*
+	 * Método para criar a conexão com o banco de dados do MySQL (DATA SOUCE)
+	 */
+	@Bean //método de configuração do Spring
+	public DataSource getDataSource() {
+		
+		//configuar a conexão com o banco de dados do mysql:
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		
+		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setUrl("jdbc:mysql:ENDERECO_DO_BANCO/NOME_DO_BANCO?useTimezone=true&serverTimezone=UTC&useSSL=false");
+		dataSource.setUsername("USUARIO_DO_BANCO");
+		dataSource.setPassword("SENHA_DO_BANCO");
+		
+		return dataSource;
+	}
